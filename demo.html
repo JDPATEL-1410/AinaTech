@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AINA TECH - CRM Solutions for Growing Businesses</title>
+  <meta name="description" content="We build CRMs that run your business—so your team can focus on growth. Implementation, automation & training for Indian SMEs, MFDs & service businesses.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    ::selection {
+      background-color: var(--accent-primary);
+      color: var(--text-white);
+    }
+
+    :root {
+      /* Light Theme Colors */
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F8FAFC;
+      --bg-tertiary: #E2E8F0;
+      --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --bg-gradient-alt: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --bg-card: #FFFFFF;
+      
+      /* Accent Colors */
+      --accent-primary: #6366F1;
+      --accent-secondary: #EC4899;
+      --accent-success: #10B981;
+      --accent-warning: #F59E0B;
+      --accent-gradient: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
+      
+      /* Text Colors */
+      --text-primary: #1E293B;
+      --text-secondary: #64748B;
+      --text-muted: #94A3B8;
+      --text-white: #FFFFFF;
+      
+      /* Border & Shadow */
+      --border-color: #E2E8F0;
+      --border-accent: #CBD5E1;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --shadow-accent: 0 4px 20px rgba(99, 102, 241, 0.2);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NavBar Styles */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: var(--shadow-lg);
+      border-bottom-color: var(--border-accent);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 75px;
+    }
+
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      text-decoration: none;
+    }
+
+    .logo::before {
+      content: '⚡';
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: bounce 2s infinite;
+      margin-right: 0.5rem;
+    }
+
+    .logo-text {
+      display: inline-block;
+      position: relative;
+    }
+
+    .logo-sub {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin-left: 0.5rem;
+      opacity: 0.8;
+      font-family: 'Inter', sans-serif;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-8px); }
+      60% { transform: translateY(-4px); }
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.5rem;
+      align-items: center;
+      transition: left 0.3s ease;
+    }
+
+    .nav-item { position: relative; }
+
+    .nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.8rem 1.3rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      position: relative;
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+      display: block;
+    }
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: var(--accent-gradient);
+      border-radius: 12px;
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+    }
+
+    .nav-link:hover::before,
+    .nav-link.active::before {
+      width: 100%;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--text-white);
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-accent);
+    }
+
+    .cta-btn {
+      background: var(--accent-gradient);
+      color: var(--text-white);
+      font-weight: 600;
+      padding: 0.9rem 1.8rem !important;
+      border: none;
+      cursor: pointer;
+      text-transform: none;
+      box-shadow: var(--shadow-accent);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-btn::before {
+      background: var(--bg-gradient-alt);
+      width: 0;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35);
+    }
+
+    .cta-btn:hover::before {
+      width: 100%;
+    }
+
+    /* Hamburger Menu Styles */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 0.7rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      transition: all 0.3s ease;
+      position: relative;
+      width: 48px;
+      height: 48px;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hamburger:hover {
+      border-color: var(--accent-primary);
+      box-shadow: var(--shadow-accent);
+      background: var(--bg-secondary);
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--accent-primary);
+      margin: 2px 0;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      border-radius: 2px;
+      transform-origin: center;
+      position: relative;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(0, 0);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -12px;
+      margin-top: -1px;
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(0, 0);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -12px;
+      margin-top: -1px;
+    }
+
+    .hamburger.active {
+      border-color: var(--accent-secondary);
+      background: var(--bg-secondary);
+      box-shadow: 0 0 20px rgba(236, 72, 153, 0.2);
+    }
+
+    .hamburger.active span {
+      background: var(--accent-secondary);
+    }
+
+    /* Footer Styles */
+    .footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-color);
+      padding: 4rem 0 1.5rem;
+      position: relative;
+      margin-top: 5rem;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--accent-gradient);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-section h3 {
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--accent-gradient);
+      border-radius: 2px;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin-bottom: 0.8rem;
+      display: block;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .footer-section a:hover {
+      color: var(--accent-primary);
+      transform: translateX(8px);
+      padding-left: 0.5rem;
+    }
+
+    .footer-section .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding: 0.8rem 1rem;
+      background: var(--bg-card);
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .footer-section .contact-item:hover {
+      border-color: var(--accent-primary);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .footer-section .contact-item .icon {
+      font-size: 1.2rem;
+      width: 24px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .social-link:hover {
+      border-color: var(--accent-primary);
+      color: var(--text-white);
+      background: var(--accent-gradient);
+      box-shadow: var(--shadow-accent);
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    .footer-bottom {
+      border-top: 2px solid var(--border-color);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-bottom p {
+      color: var(--text-secondary);
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-primary);
+      background: var(--bg-tertiary);
+    }
+
+    .footer-bottom .heart {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: heartbeat 2s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    /* Main Content Spacing */
+    .main-content {
+      padding-top: 75px;
+      min-height: calc(100vh - 200px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg-primary);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        box-shadow: var(--shadow-lg);
+      }
+      
+      .nav-menu.active { left: 0; }
+      
+      .nav-link { 
+        font-size: 1.3rem; 
+        padding: 1.2rem 2.5rem; 
+      }
+      
+      .nav-container { padding: 0 1rem; }
+      
+      .logo { font-size: 1.4rem; }
+      
+      .logo-sub { display: none; }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+      }
+      
+      .footer-bottom {
+        text-align: center;
+        flex-direction: column;
+      }
+      
+      .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      .social-links { justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .logo { font-size: 1.2rem; }
+      .nav-container { padding: 0 0.8rem; }
+      .hamburger { width: 44px; height: 44px; padding: 0.6rem; }
+      .hamburger span { width: 22px; }
+      .hamburger.active span:nth-child(1),
+      .hamburger.active span:nth-child(3) { margin-left: -11px; }
+      .footer-container { padding: 0 1rem; }
+      .footer-content { gap: 2rem; }
+      .social-link { width: 44px; height: 44px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo" onclick="closeMenu()">
+        <span class="logo-text">AinaTech</span>
+        <span class="logo-sub">CRM Solutions</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="#" class="nav-link active" onclick="closeMenu()">Home</a></li>
+        <li class="nav-item"><a href="#crm-solutions" class="nav-link" onclick="closeMenu()">CRM Solutions</a></li>
+        <li class="nav-item"><a href="#use-cases" class="nav-link" onclick="closeMenu()">Use Cases</a></li>
+        <li class="nav-item"><a href="#case-studies" class="nav-link" onclick="closeMenu()">Case Studies</a></li>
+        <li class="nav-item"><a href="#pricing" class="nav-link" onclick="closeMenu()">Pricing</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link" onclick="closeMenu()">About</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a></li>
+        <li class="nav-item"><button class="nav-link cta-btn" onclick="closeMenu()">Free CRM Audit</button></li>
+      </ul>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Placeholder -->
+  <div class="main-content">
+    <!-- Your page content will go here -->
+    <div style="height: 120vh; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+      <div style="text-align: center; padding: 2rem;">
+        <h1 style="font-size: 3rem; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem;">Welcome to AinaTech</h1>
+        <p style="font-size: 1.2rem; color: var(--text-secondary);">Your website content goes here...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About AinaTech</h3>
+          <p>We build CRMs that run your business—so your team can focus on growth. Implementation, automation, and training on the tools you already use.</p>
+          <div class="social-links">
+            <a href="#" class="social-link">LI</a>
+            <a href="#" class="social-link">TW</a>
+            <a href="#" class="social-link">YT</a>
+            <a href="#" class="social-link">IG</a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Our Services</h3>
+          <a href="#crm-solutions">CRM Implementation</a>
+          <a href="#crm-solutions">Process Automation</a>
+          <a href="#web-design">Web Design</a>
+          <a href="#digital-marketing">Digital Marketing</a>
+          <a href="#integrations">System Integrations</a>
+          <a href="#training">CRM Training</a>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Use Cases</h3>
+          <a href="#mfd-ifa">MFD / IFA Solutions</a>
+          <a href="#sales-teams">Sales Team CRM</a>
+          <a href="#service-ops">Service Operations</a>
+          <a href="#small-business">Small Business CRM</a>
+          <a href="#lead-management">Lead Management</a>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Get In Touch</h3>
+          <div class="contact-item">
+            <span class="icon">📧</span>
+            <span>hello@ainatech.in</span>
+          </div>
+          <div class="contact-item">
+            <span class="icon">📱</span>
+            <span>+91 XXX XXX XXXX</span>
+          </div>
+          <div class="contact-item">
+            <span class="icon">📍</span>
+            <span>Anand, Gujarat, India</span>
+          </div>
+          <div class="contact-item">
+            <span class="icon">⏰</span>
+            <span>Mon-Fri: 9AM - 7PM IST</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 AINA TECH SERVICES LLP. Built with <span class="heart">⚡</span> for growing businesses.</p>
+        <div class="footer-links">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#sitemap">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+      isMenuOpen = !isMenuOpen;
+      hamburger.classList.toggle('active', isMenuOpen);
+      navMenu.classList.toggle('active', isMenuOpen);
+      document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+    }
+
+    function closeMenu() {
+      isMenuOpen = false;
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+      
+      // Hide/show navbar on scroll
+      if (!window.lastScrollTop) window.lastScrollTop = 0;
+      if (scrollTop > window.lastScrollTop && scrollTop > 200) {
+        navbar.style.transform = 'translateY(-100%)';
+      } else {
+        navbar.style.transform = 'translateY(0)';
+      }
+      window.lastScrollTop = scrollTop;
+    });
+
+    // Active nav link management
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.nav-link:not(.cta-btn)');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          // Remove active class from all links
+          navLinks.forEach(l => l.classList.remove('active'));
+          // Add active class to clicked link
+          this.classList.add('active');
+        });
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add some interactive animations
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animate social links on page load
+      const socialLinks = document.querySelectorAll('.social-link');
+      socialLinks.forEach((link, index) => {
+        setTimeout(() => {
+          link.style.opacity = '0';
+          link.style.transform = 'translateY(20px)';
+          link.style.transition = 'all 0.6s ease';
+          
+          setTimeout(() => {
+            link.style.opacity = '1';
+            link.style.transform = 'translateY(0)';
+          }, 50);
+        }, index * 100);
+      });
+    });
+  </script>
+</body>
+</html>

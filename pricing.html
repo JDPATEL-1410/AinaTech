@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans - Affordable CRM Solutions | AinaTech</title>
+    <meta name="description" content="Choose the perfect CRM plan for your business. Transparent pricing with no hidden fees. Start from ₹999/month with free trial.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main" class="skip-content">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" aria-label="AinaTech Home">
+                    <img src="assets/img/logo.png" alt="AinaTech Logo" class="logo">
+                    <span class="brand-text">AinaTech</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">Solutions <span class="dropdown-arrow">▼</span></a>
+                        <div class="dropdown-menu">
+                            <a href="crm.html">CRM Solutions</a>
+                            <a href="use-cases.html">Use Cases</a>
+                        </div>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">Services <span class="dropdown-arrow">▼</span></a>
+                        <div class="dropdown-menu">
+                            <a href="web-design.html">Web Design</a>
+                            <a href="digital-marketing.html">Digital Marketing</a>
+                        </div>
+                    </li>
+                    <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                    <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#" class="btn btn-primary">Free Trial</a>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main">
+        <!-- Pricing Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="pricing-hero" data-aos="fade-up">
+                    <h1 class="page-title">Simple, Transparent Pricing</h1>
+                    <p class="page-subtitle">Choose the perfect plan for your business. No hidden fees, no long-term contracts. Start with a free trial today.</p>
+                    
+                    <div class="pricing-toggle">
+                        <span>Monthly</span>
+                        <div class="toggle-switch" id="pricingToggle">
+                            <div class="toggle-slider"></div>
+                        </div>
+                        <span>Yearly <span class="discount-badge">Save 20%</span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Plans -->
+        <section class="section">
+            <div class="container">
+                <div class="pricing-grid">
+                    <!-- Starter Plan -->
+                    <div class="pricing-card glass-card" data-plan="starter" data-aos="fade-up" data-aos-delay="100">
+                        <div class="pricing-header">
+                            <h3 class="plan-name">Starter</h3>
+                            <div class="plan-price" id="starterPrice">₹999</div>
+                            <div class="plan-period">/month</div>
+                            <p class="plan-description">Perfect for small businesses and startups</p>
+                        </div>
+                        
+                        <ul class="pricing-features">
+                            <li>Up to 100 contacts</li>
+                            <li>Basic lead capture forms</li>
+                            <li>Email integration</li>
+                            <li>Basic reporting</li>
+                            <li>Mobile app access</li>
+                            <li>Email support</li>
+                            <li class="not-included">WhatsApp integration</li>
+                            <li class="not-included">Advanced automation</li>
+                            <li class="not-included">Custom fields</li>
+                        </ul>
+                        
+                        <a href="#" class="btn btn-outline btn-lg">Start Free Trial</a>
+                    </div>
+                    
+                    <!-- Growth Plan -->
+                    <div class="pricing-card glass-card popular" data-plan="growth" data-aos="fade-up" data-aos-delay="200">
+                        <div class="pricing-header">
+                            <h3 class="plan-name">Growth</h3>
+                            <div class="plan-price" id="growthPrice">₹2,499</div>
+                            <div class="plan-period">/month</div>
+                            <p class="plan-description">Ideal for growing businesses with advanced needs</p>
+                        </div>
+                        
+                        <ul class="pricing-features">
+                            <li>Up to 1,000 contacts</li>
+                            <li>Advanced lead capture</li>
+                            <li>Email & WhatsApp integration</li>
+                            <li>Advanced reporting & analytics</li>
+                            <li>Mobile app access</li>
+                            <li>Automation workflows</li>
+                            <li>Custom fields & tags</li>
+                            <li>Priority support</li>
+                            <li>Team collaboration</li>
+                        </ul>
+                        
+                        <a href="#" class="btn btn-primary btn-lg">Start Free Trial</a>
+                    </div>
+                    
+                    <!-- Pro Plan -->
+                    <div class="pricing-card glass-card" data-plan="pro" data-aos="fade-up" data-aos-delay="300">
+                        <div class="pricing-header">
+                            <h3 class="plan-name">Pro</h3>
+                            <div class="plan-price" id="proPrice">₹4,999</div>
+                            <div class="plan-period">/month</div>
+                            <p class="plan-description">For established businesses requiring full features</p>
+                        </div>
+                        
+                        <ul class="pricing-features">
+                            <li>Unlimited contacts</li>
+                            <li>Advanced lead capture & forms</li>
+                            <li>All integrations included</li>
+                            <li>Advanced analytics & forecasting</li>
+                            <li>Mobile app access</li>
+                            <li>Advanced automation</li>
+                            <li>Custom fields & workflows</li>
+                            <li>24/7 priority support</li>
+                            <li>Team collaboration & roles</li>
+                            <li>API access</li>
+                            <li>White-label options</li>
+                        </ul>
+                        
+                        <a href="#" class="btn btn-primary btn-lg">Start Free Trial</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Comparison -->
+        <section class="feature-comparison section">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <h2 class="section-title">Feature Comparison</h2>
+                    <p class="section-subtitle">Compare all features across our pricing plans</p>
+                </div>
+                
+                <div class="comparison-table-wrapper" data-aos="fade-up" data-aos-delay="200">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Starter</th>
+                                <th>Growth</th>
+                                <th>Pro</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Contact Management</td>
+                                <td>100 contacts</td>
+                                <td>1,000 contacts</td>
+                                <td>Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td>Lead Capture Forms</td>
+                                <td><span class="feature-check">✓</span></td>
+                                <td><span class="feature-check">✓</span></td>
+                                <td><span class="feature-check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Email Integration</td>
+                                <td><span class="feature-check">✓</span></td>
+                                <td><span class="feature-check">✓</span></td>
+                                <td><span class="feature-check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>WhatsApp Integration</td>
+                                <td><span class="feature-cross">✗</span></td>
+                                <td><span class="feature-check">✓</span></td>
+                                <td><span class="feature-check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Automation Workflows</td>
+                                <td><span class="feature-cross">✗</span></td>
+                                <td><span class="feature-check">✓</span></td>
+                                <td><span class="feature-check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Advanced Analytics</td>
+                                <td><span class="feature-cross">✗</span></td>
+                                <td><span class="feature-check">✓</span></td>
+                                <td><span class="feature-check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Team Collaboration</td>
+                                <td><span class="feature-cross">✗</span></td>
+                                <td><span class="feature-check">✓</span></td>
+                                <td><span class="feature-check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>API Access</td>
+                                <td><span class="feature-cross">✗</span></td>
+                                <td><span class="feature-cross">✗</span></td>
+                                <td><span class="feature-check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>White-label Options</td>
+                                <td><span class="feature-cross">✗</span></td>
+                                <td><span class="feature-cross">✗</span></td>
+                                <td><span class="feature-check">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Support</td>
+                                <td>Email</td>
+                                <td>Priority</td>
+                                <td>24/7 Priority</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section section">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Everything you need to know about our pricing and plans</p>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                        <button class="faq-question">
+                            Can I change my plan anytime?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle, and we'll prorate any differences.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                        <button class="faq-question">
+                            Is there a free trial available?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes! We offer a 14-day free trial for all plans. No credit card required to start your trial. You can explore all features and see how AinaTech CRM works for your business.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                        <button class="faq-question">
+                            What payment methods do you accept?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                We accept all major credit cards, debit cards, net banking, UPI, and digital wallets. All payments are processed securely through our payment partners.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                        <button class="faq-question">
+                            Is my data secure?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Absolutely. We use enterprise-grade security measures including SSL encryption, regular backups, and comply with international data protection standards. Your data is hosted on secure Indian servers.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                        <button class="faq-question">
+                            Do you offer custom solutions?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes, we offer custom solutions for enterprises and businesses with specific requirements. Contact our sales team to discuss your needs and get a customized quote.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing CTA -->
+        <section class="cta-section section">
+            <div class="container">
+                <div class="cta-content glass-card text-center" data-aos="zoom-in">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Join hundreds of businesses using AinaTech CRM to grow their sales and improve customer relationships</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary btn-lg">Start Free Trial</a>
+                        <a href="contact.html" class="btn btn-outline btn-lg">Contact Sales</a>
+                    </div>
+                    <p class="cta-note">✓ No credit card required ✓ 14-day free trial ✓ Cancel anytime</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/img/logo.png" alt="AinaTech Logo">
+                        <span>AinaTech</span>
+                    </div>
+                    <p>Empowering Indian businesses with cutting-edge CRM solutions and digital services.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="Facebook"></a>
+                        <a href="#" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" alt="LinkedIn"></a>
+                        <a href="#" aria-label="Twitter"><img src="assets/icons/twitter.svg" alt="Twitter"></a>
+                        <a href="#" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="crm.html">CRM Solutions</a></li>
+                            <li><a href="use-cases.html">Use Cases</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="web-design.html">Web Design</a></li>
+                            <li><a href="digital-marketing.html">Digital Marketing</a></li>
+                            <li><a href="case-studies.html">Case Studies</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Contact Info</h4>
+                        <div class="contact-info">
+                            <p>📧 hello@ainatech.com</p>
+                            <p>📞 +91 98765 43210</p>
+                            <p>📍 Mumbai, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> AINA TECH SERVICES LLP. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Contact on WhatsApp">
+        <img src="assets/icons/whatsapp.svg" alt="WhatsApp">
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
