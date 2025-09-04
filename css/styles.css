@@ -1071,7 +1071,7 @@ body.nav-open::after {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: conic-gradient(var(--green) 0 75%, #def5ea 75%);
+  background: conic-gradient(#b10707 0 75%, #def5ea 75%);
 }
 
 /* Process steps */
