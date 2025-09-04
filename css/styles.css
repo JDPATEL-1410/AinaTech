@@ -1852,7 +1852,7 @@ body::after {
     background: linear-gradient(#ffd0d0, var(--red), #ffd0d0);
     opacity: .35;
   }
-  .process .step-card { padding-left: 54px; }
+  .process .step-card { padding-left: 78px; }
   .process .step-card .ico { position: absolute; left: 18px; top: 14px; }
 }
 /* Privacy/Policy polish */
