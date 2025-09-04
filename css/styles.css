@@ -1906,4 +1906,72 @@ body::after {
   .sitemap .container { text-align: center; }
   .sitemap-group { text-align: left; }
 }
+/* About: small polish using your existing tokens */
+.about-block .card h3 { margin: 0 0 6px; font-weight: 800; }
+.about-block .muted { color: var(--muted); }
+
+/* A.I.N.A pillars */
+.pill-aina { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.pill-aina li { display: grid; grid-template-columns: 40px 1fr; align-items: center; gap: 10px; }
+.pill-aina .letter{
+  width: 40px; height: 40px; border-radius: 10px;
+  background: #ffecec; color: var(--red);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 800;
+}
+
+/* VMP (Vision Mission Purpose) */
+.vmp-grid { gap: 18px; }
+.vmp-card { padding: 18px; transition: transform .18s ease, box-shadow .2s ease; }
+.vmp-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,.10); }
+
+/* icon badge (consistent with your other sections) */
+.about-block .ico{
+  width: 48px; height: 48px; border-radius: 12px;
+  background: #ffecec; display: inline-flex; align-items: center; justify-content: center;
+  margin-bottom: 8px;
+}
+.about-block .ico svg{ width: 24px; height: 24px; fill: var(--red); }
+
+/* Mobile: center headings, keep cards left-aligned */
+@media (max-width: 960px){
+  .about-intro .container, .about-vmp .container { text-align: center; }
+  .about-intro .card, .about-vmp .card { text-align: left; }
+}
+/* Team avatars */
+.team-card {
+  text-align: center;
+  padding: 18px;
+  border-radius: var(--radius);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.team-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 3px solid #f0f2f5;
+}
+
+.role-badge {
+  font-size: .9rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* Grid layout */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
 
